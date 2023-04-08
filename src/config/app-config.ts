@@ -1,0 +1,1 @@
+export const tokenApi = 'Uisp8600';
