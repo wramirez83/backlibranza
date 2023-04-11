@@ -16,6 +16,7 @@ exports.router = void 0;
 const express_1 = require("express");
 const TextTopsController_1 = __importDefault(require("../Context/TextTops/infrastructure/TextTopsController"));
 const BannerController_1 = __importDefault(require("../Context/Banners/infrastructure/BannerController"));
+const TestimonialsController_1 = __importDefault(require("../Context/Testimonials/infrastructure/TestimonialsController"));
 exports.router = (0, express_1.Router)();
 exports.router.get('/info', (req, res) => {
     res.send('Hola.. Wilson');
@@ -27,4 +28,8 @@ exports.router.get('/text-tops', (req, res) => __awaiter(void 0, void 0, void 0,
 exports.router.get('/banners/:origin', (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     const controller = new BannerController_1.default();
     res.json(yield controller.getAll(req.params.origin));
+}));
+exports.router.get('/testimonials', (req, res) => __awaiter(void 0, void 0, void 0, function* () {
+    const testimonials = new TestimonialsController_1.default('Activo');
+    res.json(yield testimonials.getAll());
 }));

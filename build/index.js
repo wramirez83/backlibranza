@@ -9,7 +9,7 @@ const app_config_1 = require("./config/app-config");
 var cors = require('cors');
 const path = require('path');
 const app = (0, express_1.default)();
-const port = 3000;
+const port = 3001;
 app.use(cors());
 app.get('/', (req, res) => {
     res.send('Api para la administración y gestión de contenidos para LIBRANZA oportunidades');
