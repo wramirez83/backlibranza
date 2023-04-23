@@ -26,3 +26,4 @@ class TextTopsController {
     }
 }
 exports.default = TextTopsController;
+//# sourceMappingURL=TextTopsController.js.map

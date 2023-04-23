@@ -4,7 +4,8 @@ import { tokenApi } from './config/app-config';
 var cors = require('cors')
 const path = require('path');
 const app: Express = express();
-const port = 3001;
+const port = process.env.PORT || 3001;
+
 
 app.use(cors());
 
@@ -13,7 +14,7 @@ app.get('/', (req: Request, res: Response) => {
 });
 
 app.use(`/api/v1/${tokenApi}`, router);
-app.use(`/api/v1/${tokenApi}/assets`, express.static(path.join(__dirname, '/assets')));
+app.use(`/api/v1/${tokenApi}/assets`, express.static(path.join(__dirname, 'assets')));
 
 app.listen(port, () => {
   console.log(`Example app listening at http://localhost:${port}`);

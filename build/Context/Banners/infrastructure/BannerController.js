@@ -30,3 +30,4 @@ class BannerController {
     }
 }
 exports.default = BannerController;
+//# sourceMappingURL=BannerController.js.map

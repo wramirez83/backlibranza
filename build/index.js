@@ -9,13 +9,14 @@ const app_config_1 = require("./config/app-config");
 var cors = require('cors');
 const path = require('path');
 const app = (0, express_1.default)();
-const port = 3001;
+const port = process.env.PORT || 3001;
 app.use(cors());
 app.get('/', (req, res) => {
     res.send('Api para la administración y gestión de contenidos para LIBRANZA oportunidades');
 });
 app.use(`/api/v1/${app_config_1.tokenApi}`, api_1.router);
-app.use(`/api/v1/${app_config_1.tokenApi}/assets`, express_1.default.static(path.join(__dirname, '/assets')));
+app.use(`/api/v1/${app_config_1.tokenApi}/assets`, express_1.default.static(path.join(__dirname, 'assets')));
 app.listen(port, () => {
     console.log(`Example app listening at http://localhost:${port}`);
 });
+//# sourceMappingURL=index.js.map

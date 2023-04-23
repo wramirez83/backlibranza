@@ -33,3 +33,4 @@ exports.router.get('/testimonials', (req, res) => __awaiter(void 0, void 0, void
     const testimonials = new TestimonialsController_1.default('Activo');
     res.json(yield testimonials.getAll());
 }));
+//# sourceMappingURL=api.js.map
