@@ -2,6 +2,7 @@ import {Router, Request, Response } from 'express';
 import TextTopsController from '../Context/TextTops/infrastructure/TextTopsController';
 import BannerController from '../Context/Banners/infrastructure/BannerController';
 import TestimonialsController from '../Context/Testimonials/infrastructure/TestimonialsController';
+import SendMailContact from './../Context/Emails/SendMailContact';
 export const router = Router();
 
 router.get('/info', (req: Request, res: Response) => {
@@ -21,5 +22,9 @@ router.get('/banners/:origin', async (req: Request, res: Response) => {
 router.get('/testimonials', async (req: Request, res: Response ) => {
     const testimonials = new TestimonialsController('Activo');
     res.json(await testimonials.getAll());
+})
+
+router.post('/contact',  (req: Request, res: Response) => {
+    SendMailContact.send(req.body, res);
 })
 

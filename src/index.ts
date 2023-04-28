@@ -1,13 +1,16 @@
 import express, { Express, Request, Response } from 'express';
 import {router} from './routes/api';
 import { tokenApi } from './config/app-config';
+var bodyParser = require('body-parser')
 var cors = require('cors')
 const path = require('path');
+const nodemailer = require('nodemailer');
 const app: Express = express();
 const port = process.env.PORT || 3001;
 
 
 app.use(cors());
+app.use(bodyParser.json())
 
 app.get('/', (req: Request, res: Response) => {
   res.send('Api para la administración y gestión de contenidos para LIBRANZA oportunidades');

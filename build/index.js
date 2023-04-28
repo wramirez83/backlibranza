@@ -6,11 +6,14 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const express_1 = __importDefault(require("express"));
 const api_1 = require("./routes/api");
 const app_config_1 = require("./config/app-config");
+var bodyParser = require('body-parser');
 var cors = require('cors');
 const path = require('path');
+const nodemailer = require('nodemailer');
 const app = (0, express_1.default)();
 const port = process.env.PORT || 3001;
 app.use(cors());
+app.use(bodyParser.json());
 app.get('/', (req, res) => {
     res.send('Api para la administración y gestión de contenidos para LIBRANZA oportunidades');
 });

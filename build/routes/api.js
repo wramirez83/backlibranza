@@ -17,6 +17,7 @@ const express_1 = require("express");
 const TextTopsController_1 = __importDefault(require("../Context/TextTops/infrastructure/TextTopsController"));
 const BannerController_1 = __importDefault(require("../Context/Banners/infrastructure/BannerController"));
 const TestimonialsController_1 = __importDefault(require("../Context/Testimonials/infrastructure/TestimonialsController"));
+const SendMailContact_1 = __importDefault(require("./../Context/Emails/SendMailContact"));
 exports.router = (0, express_1.Router)();
 exports.router.get('/info', (req, res) => {
     res.send('Hola.. Wilson');
@@ -33,4 +34,7 @@ exports.router.get('/testimonials', (req, res) => __awaiter(void 0, void 0, void
     const testimonials = new TestimonialsController_1.default('Activo');
     res.json(yield testimonials.getAll());
 }));
+exports.router.post('/contact', (req, res) => {
+    SendMailContact_1.default.send(req.body, res);
+});
 //# sourceMappingURL=api.js.map
