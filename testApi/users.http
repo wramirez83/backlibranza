@@ -1,0 +1,7 @@
+POST http://localhost:3001/api/v1/admin
+Content-Type: application/json
+
+{
+    "email": "wilson.rz@gmail.com",
+    "password" : "123"
+}

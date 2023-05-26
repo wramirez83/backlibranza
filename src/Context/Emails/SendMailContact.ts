@@ -1,7 +1,7 @@
 import {transporter} from './../../transport/TransportEmail';
 import {Router, Request, Response } from 'express';
 class SendMailContact{
-    async send(dataEmail: Object, res: Response){
+    async send(dataEmail: {email: '', fullname: '', typeDocument:'', document: '', phone: '', msg: '' }, res: Response){
         const mailData =  {
             from: process.env.EMAIL_USERNAME || 'info@medusaweb.ml',
             to: [dataEmail.email, process.env.EMAIL_RECEPT || 'developlagobo@gmail.com' ],

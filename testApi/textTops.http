@@ -1,0 +1,16 @@
+GET http://localhost:3001/api/v1/admin/text-tops
+Content-Type: application/json
+
+###
+
+POST http://localhost:3001/api/v1/admin/text-tops
+Content-Type: application/json
+
+{
+    "icons": "me-gusta.png",
+    "word_one" : "jajajaj"
+}
+
+###
+
+DELETE http://localhost:3001/api/v1/admin/text-tops/9
