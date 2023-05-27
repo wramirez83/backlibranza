@@ -18,8 +18,7 @@ exports.router.post('/', (req, res) => {
         password: req.body.password,
     })
         .then(result => {
-        console.log(result);
-        res.send(result);
+        res.status(201).send(result);
     });
 });
 exports.router.all('/text-tops/:id?', (req, res) => {

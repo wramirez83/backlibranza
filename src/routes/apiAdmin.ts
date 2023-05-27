@@ -14,8 +14,7 @@ router.post('/',  (req: Request, res: Response) => {
         password: req.body.password,
     })
     .then(result => {
-        console.log(result);
-        res.send(result)
+        res.status(201).send(result)
     });
 });
 

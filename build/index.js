@@ -19,7 +19,7 @@ app.get('/', (req, res) => {
     res.send('Api para la administración y gestión de contenidos para LIBRANZA oportunidades');
 });
 app.use(`/api/v1/${app_config_1.tokenApi}`, api_1.router); //Route FRONT
-app.use(`/api/v1/admin`, apiAdmin_1.router); //Route FRONT
+app.use(`/api/v1/admin`, apiAdmin_1.router); //Route FRONT ADMIN
 app.use(`/api/v1/${app_config_1.tokenApi}/assets`, express_1.default.static(path.join(__dirname, 'assets')));
 app.listen(port, () => {
     console.log(`Example app listening at http://localhost:${port}`);

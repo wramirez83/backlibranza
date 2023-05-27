@@ -18,7 +18,7 @@ app.get('/', (req: Request, res: Response) => {
 });
 
 app.use(`/api/v1/${tokenApi}`, router); //Route FRONT
-app.use(`/api/v1/admin`, routerAdmin); //Route FRONT
+app.use(`/api/v1/admin`, routerAdmin); //Route FRONT ADMIN
 app.use(`/api/v1/${tokenApi}/assets`, express.static(path.join(__dirname, 'assets')));
 
 app.listen(port, () => {

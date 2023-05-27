@@ -1,6 +1,7 @@
 import IAuthUser from "./IAuthUser";
 const users = require("./../../../../models").user;
 const bcrypt = require("bcrypt");
+import { tk } from'./../../../config/app-config';
 const jwt = require("jsonwebtoken");
 
 class AuthUserController {
@@ -17,7 +18,6 @@ class AuthUserController {
         msg: "usuario no existe",
       };
     }
-    const tk = "09f26e402586e2f5a2ce285b009f0c3730cd9b8e1af3eb84df6611";
     const match = await bcrypt.compare(form.password, result[0].password);
 
     if (match) {

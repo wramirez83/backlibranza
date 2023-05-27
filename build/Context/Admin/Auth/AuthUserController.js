@@ -11,6 +11,7 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
 Object.defineProperty(exports, "__esModule", { value: true });
 const users = require("./../../../../models").user;
 const bcrypt = require("bcrypt");
+const app_config_1 = require("./../../../config/app-config");
 const jwt = require("jsonwebtoken");
 class AuthUserController {
     login(form) {
@@ -27,7 +28,6 @@ class AuthUserController {
                     msg: "usuario no existe",
                 };
             }
-            const tk = "09f26e402586e2f5a2ce285b009f0c3730cd9b8e1af3eb84df6611";
             const match = yield bcrypt.compare(form.password, result[0].password);
             if (match) {
                 return {
@@ -36,7 +36,7 @@ class AuthUserController {
                         id: result[0].id,
                         full_name: result[0].full_name,
                         email: result[0].email,
-                    }, tk, { expiresIn: "1800s" }),
+                    }, app_config_1.tk, { expiresIn: "1800s" }),
                 };
             }
             return {
